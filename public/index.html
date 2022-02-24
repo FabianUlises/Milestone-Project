@@ -4,9 +4,64 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <script defer src="app.js" type="javascript"></script>
     <title>Document</title>
 </head>
 <body>
-    
+    <!-- START OF MAIN PAGE CONTAINER -->
+    <div class="container">
+        <!-- MAIN PAGE HEADER -->
+        <h1 id="pageHeader">Milestone Game</h1>
+        <!-- START OF GAME CONTAINER -->
+        <main id="gameContainer">
+            <!-- START OF GAME BTN CONTAINER  -->
+            <div id="btnContainer">
+                <!-- GAME BUTTONS -->
+                <button class="btn btn--roll">Roll Dice</button>
+                <button class="btn btn--hold">Hold Dice</button>
+                <button class="btn btn--new">New Game</button>
+            </div>
+            <!-- END OF GAME BTN CONTAINER -->
+            <!-- START OF GAME PLAYER CONTAINER -->
+            <div class="playerContainer">
+                <!-- GAME PLAYER -->
+                <section class="player player--0 player--active">
+                    <!-- PLAYER NAME -->
+                    <h2 class="name" id="name--0">Player 1</h2>
+                    <!-- PLAYER SCORE -->
+                    <p class="score" id="score--0">8</p>
+                    <!-- START OF CURRENT PLAYER CONTAINER -->
+                    <div class="currentScore">
+                        <!-- CURRENT PLAYER LABEL -->
+                        <p class="current-label">Current</p>
+                        <!-- CURRENT PLAYER SCORE -->
+                        <p class="current-score" id="current--0">0</p>
+                    </div>
+                    <!-- END OF CURRENT PLAYER CONTAINER -->
+                    <!-- END OF SINGLE PLAYER -->
+                </section>
+                <!-- GAME PLAYER -->
+                <section class="player player--1">
+                    <!-- PLAYER NAME -->
+                    <h2 class="name" id="name--1">Player 1</h2>
+                    <!-- PLAYER SCORE -->
+                    <p class="score" id="score--1">16</p>
+                    <!-- START OF CURRENT PLAYER CONTAINER -->
+                    <div class="currentScore">
+                        <!-- CUURENT PLAYER LABEL -->
+                        <p class="current-label">Current</p>
+                        <!-- CURRENT PLAYER SCORE -->
+                        <p class="current-score" id="current--1">0</p>
+                    </div>
+                    <!-- END OF CURRENT PLAYER CONTAINER -->
+                </section>
+                <!-- END OF SINGLE PLAYER -->
+            </div>
+            <!-- END OF PLAYER CONTAINER -->
+        </main>
+        <!-- END OF GAME CONTAINER -->
+    </div>
+    <!-- END OF MAIN PAGE CONTAINER -->
 </body>
 </html>
