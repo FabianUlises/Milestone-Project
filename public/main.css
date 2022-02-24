@@ -1,13 +1,15 @@
+/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: inherit;
 }
+/* HTML */
 html {
     font-size: 62.5%;
     box-sizing: border-box;
 }
-
+/* BODY DEFAULT STYLES */
 body {
     font-family: sans-serif;
     min-height: 100vh;
@@ -17,11 +19,15 @@ body {
     justify-content: center;
     align-items: center;
 }
+/* PAGE MAIN H1*/
 #pageHeader {
     padding: 2rem;
     text-align: center;
     font-size: 3rem;
 }
+/* CONTAINER HAS NO STYLES JUST USED TO CONTAIN CONTENT */
+
+/* GAME CONTAINER */
 .container main {
     width: 90vw;
     height: 60rem;
@@ -30,6 +36,7 @@ body {
     border-radius: 2rem;
     overflow: hidden;
 }
+/* BUTTON CONTAINER FOR GAME CONTAINER */
 .container #btnContainer {
     width: 100%;
     height: 5rem;
@@ -39,6 +46,7 @@ body {
     margin: 2rem auto;
 
 }
+/* ALL BUTTONS IN THE BUTTON CONTAINER */
 #btnContainer .btn {
     padding: 1.3rem 2rem;
     background-color: rgba(255,255,255, .2);
@@ -48,6 +56,19 @@ body {
     font-size: 1.8rem;
 }
 /* individual button styles */
+/* ROLL BUTTON */
+#btnContainer #btn--roll {    
+
+}
+/* HOLD BUTTON */
+#btnContainer #btn--hold {
+
+}
+/* NEW GAME BUTTON */
+#btnContainer #btn--new {
+
+}
+/* INDIVIDUAL PLAYER CONTAINER */
 .playerContainer {
     background-color: purple;
     height: 100%;
@@ -55,6 +76,7 @@ body {
     display: grid;
     grid-template-columns: 1fr;
 }
+/* STYLE FOR INDIVIDUAL PLAYER */
 .player {
     
 }
