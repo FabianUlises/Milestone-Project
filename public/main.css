@@ -11,13 +11,26 @@ html {
 }
 /* BODY DEFAULT STYLES */
 body {
-    font-family: sans-serif;
+    font-family: 'Courier New', Courier, monospace;
     min-height: 100vh;
+    width: 100%;
     color: whitesmoke;
-    background-image: linear-gradient(to top left, orange 0%, purple 100%);
+    background-image: linear-gradient(to top left, rgba(147, 116, 59, .8) 0%, rgba(132, 54, 132, .9) 100%);
     display: flex;
     justify-content: center;
     align-items: center;
+}
+/* CONTAINER FOR DICE IMAGES */
+#diceContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+}
+/* DICE IMAGE */
+#diceContainer img {
+    display: inline-block;
+    width: 100%;
 }
 /* PAGE MAIN H1*/
 #pageHeader {
@@ -31,31 +44,43 @@ body {
 .container main {
     width: 90vw;
     height: 60rem;
-    background-color: rgba(255, 255, 255, .3);
+    background-color: transparent;
     box-shadow: 0 2rem 4rem rgba(0,0,0, .3);
     border-radius: 2rem;
     overflow: hidden;
+    filter: blur();
 }
 /* BUTTON CONTAINER FOR GAME CONTAINER */
 .container #btnContainer {
-    width: 100%;
+    width: 75%;
     height: 5rem;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 1rem;
+    display: flex;
     margin: 2rem auto;
+    justify-content: space-between;
+    align-items: center;
 
 }
 /* ALL BUTTONS IN THE BUTTON CONTAINER */
 #btnContainer .btn {
+    display: inline-block;
+    font-family: inherit;
+    font-weight: bold;
     padding: 1.3rem 2rem;
-    background-color: rgba(255,255,255, .2);
-    border: none;
-    border-radius: 2rem;
     color: black;
     font-size: 1.8rem;
+    text-align: center;
+    text-decoration: none;
+    width: 80px;
+    transition: transform 250ms ease;
 }
-/* individual button styles */
+/* BUTTON HOVER STATE */
+.btn:hover {
+    transform: translateY(-5px);
+}
+/* BUTTON ACTIVE STATE */
+.btn:active {
+    scale: 1.1;
+}
 /* ROLL BUTTON */
 #btnContainer #btn--roll {    
 
@@ -68,15 +93,51 @@ body {
 #btnContainer #btn--new {
 
 }
-/* INDIVIDUAL PLAYER CONTAINER */
+/* PLAYER CONTAINER */
 .playerContainer {
-    background-color: purple;
     height: 100%;
     width: 100%;
+    background-color: transparent;
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    /* grid-template-rows: 250px 1fr;  ADD TO MEDIA QUERY*/
 }
 /* STYLE FOR INDIVIDUAL PLAYER */
 .player {
-    
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+
+}
+/* PLAYER HEADER */
+.player h2 {
+    padding: 3rem;
+    font-size: 2rem;
+}
+/* PLAYER SCORE */
+.player .score {
+    font-size: 6rem;
+}
+/* PLAYER CURRENT SCORE */
+.currentScore {
+    border: 2px solid black;
+    width: 20vw;
+    margin: 0 auto;
+    margin-top: 15rem;
+    padding: 2.3rem;
+    border-radius: 15px;
+}
+/* PLAYER LABEL */
+.current-label {
+    font-size: 1.8rem;
+    font-weight: bold;
+    padding-bottom: 2rem;
+}
+/* PLAYER SCORE */
+.current-score {
+    font-size: 3rem;
+    font-weight: bold;
+}
+.player--active {
+    background-color: rgba(245, 245, 245, 0.152);
 }
