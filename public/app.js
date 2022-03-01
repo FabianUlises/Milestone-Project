@@ -11,16 +11,17 @@ const dice = document.querySelector(`.dice`);
 const btnNew = document.querySelector(`.btn--new`);
 const btnHold = document.querySelector(`.btn--hold`);
 const btnRoll = document.querySelector(`.btn--roll`);
-
-// SETTING USER NAME WITH PROMPT
-// const player1Name = window.prompt(`Enter a name for player 1`);
-// const player2Name = window.prompt(`Enter a name for player 2`);
-// document.querySelector(`#name--0`).textContent = player1Name ? player1Name : `Neo`;
-// document.querySelector(`#name--1`).textContent = player2Name ? player2Name : `Morpheus`;
+const diceCtn = document.querySelector(`#imgCtn`);
 
 // INITIALIZING 
-let score, currentScore, activePlayer, playing;
-
+let score, currentScore, activePlayer, playing, player1Name, player2Name;
+// FUNCTION FOR PLAYER NAME
+const setUserName = function() {
+    player1Name = window.prompt(`Enter a name for player 1`);
+    player2Name = window.prompt(`Enter a name for player 2`);
+    document.querySelector(`#name--0`).textContent = player1Name ? player1Name : `Neo`;
+    document.querySelector(`#name--1`).textContent = player2Name ? player2Name : `Morpheus`;
+}
 // // GAME STARTING STATE // SHOULD BE SET AT START AND ADDED TO NEW GAME BUTTON AS CALLBACK
 const init = function() {
     // INITIALIZING
@@ -33,22 +34,64 @@ const init = function() {
     score1.textContent = 0;
     currentScore0.textContent = 0;
     currentScore1.textContent = 0;
-    // dice.classList.add(`hidden`);
+    diceCtn.classList.add(`hidden`);
     player0.classList.remove(`player--winner`);
     player1.classList.remove(`player--winner`);
     player0.classList.add(`player--active`);
     player1.classList.remove(`player--active`);
+    document.querySelector(`.btn--hold`).disabled = false;
+    setUserName();
 };
 init();
 btnNew.addEventListener(`click`, init);
-
-
+// FUNCTION FOR SWITCHING PLAYER
+const switchPlayer = function() {
+    document.getElementById(`current--${activePlayer}`).textContent = 0;
+    currentScore = 0;
+    activePlayer = activePlayer === 0 ? 1 : 0;
+    player0.classList.toggle(`player--active`);
+    player1.classList.toggle(`player--active`);
+};
 
 // PLAYER SHOULD CLICK BUTTON ROLL DICE TO OUT PUT RANOM DICE NUMBER
-// btnRoll.addEventListener(`click`, function() {
-//     // USER SHOULDNT BE ABLE TO PLAY GAME IF NOT STARTED!
-//         // SET RANDOM NUMBER <= 6 AS A DICE
-//         const diceNum = Math.trunc(Math.random() * 6) + 1;
-//         console.log(diceNum)
-//         dice.src = `../assets/img/dice-${diceNum}.png`;
-// });
+btnRoll.addEventListener(`click`, function() {
+    // USER SHOULDNT BE ABLE TO PLAY GAME IF NOT STARTED!
+    if(playing) {
+        // SET RANDOM NUMBER <= 6 AS A DICE
+        const diceNum = Math.trunc(Math.random() * 6) + 1;
+        console.log(diceNum)
+        dice.src = `./img/dice-${diceNum}.png`;
+        diceCtn.classList.remove(`hidden`);
+        // IF DICENUM === 1 CURRENT PLAYER LOSES AND SWITCHES
+        if(diceNum !== 1) {
+            console.log(`your winning`)
+            // SETTING CURRENT SCORE TO EQUAL DICENUM
+            currentScore += diceNum;
+            document.querySelector(`#current--${activePlayer}`).textContent = currentScore;
+        } else {
+            console.log(`your losing`)
+            // SWITCHING PLAYER
+            switchPlayer();
+        }
+
+    }
+});
+// HOLD BUTTON
+// if playering when button is pressed current score should be added to score Array
+// set the score from array to equal score on Ui
+// if score > 100 game is won
+btnHold.addEventListener(`click`, function() {
+    score[activePlayer] += currentScore;
+    document.getElementById(`score--${activePlayer}`).textContent = score[activePlayer];
+    if(score[activePlayer] >= 100) {
+        // GAME IS OVER
+        playing = false;
+        // ADD HIDDEN CLASS TO IMAGE DICE CONTAINER
+        diceCtn.classList.remove(`hidden`);
+        // DISABLE HOLD BUTTON
+        document.querySelector(`.btn--hold`).disabled = true;
+    } else {
+        // SWITCHING PLAYER
+        switchPlayer();
+    }
+});

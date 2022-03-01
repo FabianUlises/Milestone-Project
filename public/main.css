@@ -20,10 +20,10 @@ body {
     justify-content: center;
     align-items: center;
 }
-/* .hidden {
+.hidden {
     display: none;
 } 
-*/
+
 
 /* CONTAINER */
 .container {
@@ -50,7 +50,7 @@ body {
 #pageHeader {
     padding: 2rem;
     text-align: center;
-    font-size: 3rem;
+    font-size: 3.6rem;
 }
 
 /* GAME CONTAINER */
@@ -105,6 +105,9 @@ button {
 .player {
     text-align: center;
     padding-bottom: 3rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 100px 1fr;
 
 }
 /* PLAYER HEADER */
