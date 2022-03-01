@@ -4,17 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="main.css">
-    <script defer src="app.js"></script>
+    <link rel="stylesheet" href="./main.css">
+    <script defer src="./app.js"></script>
     <title>Document</title>
 </head>
 <body>
     <!-- START OF MAIN PAGE CONTAINER -->
     <div class="container">
-        <!-- DICE CONTAINER -->
-        <header id="diceContainer">
-            <img src="" alt="dice image">
-        </header>
+        <div id="diceContainer">
+            <img src="./img/dice-1.png" alt="dice image">
+        </div> 
+        
+        
         <!-- MAIN PAGE HEADER -->
         <h1 id="pageHeader">Milestone Game</h1>
         <!-- START OF GAME CONTAINER -->
@@ -22,14 +23,14 @@
             <!-- START OF GAME BTN CONTAINER  -->
             <div id="btnContainer">
                 <!-- GAME BUTTONS -->
-                <a href="#" class="btn btn--roll">Roll Dice</a>
-                <a href="#" class="btn btn--hold">Hold Dice</a>
-                <a href="#" class="btn btn--new">New Game</a>
+                <button href="#" class="btn btn--roll">Roll Dice</button>
+                <button href="#" class="btn btn--hold">Hold Dice</button>
+                <button href="#" class="btn btn--new">New Game</button>
             </div>
             <!-- END OF GAME BTN CONTAINER -->
             <!-- START OF GAME PLAYER CONTAINER -->
             <div class="playerContainer">
-                <!-- GAME PLAYER -->
+                <!-- START OF SINGLE PLAYER -->
                 <section class="player player--0 player--active">
                     <!-- PLAYER NAME -->
                     <h2 class="name" id="name--0">Player 1</h2>
@@ -44,7 +45,7 @@
                     </div>
                     <!-- END OF SINGLE PLAYER -->
                 </section>
-                <!-- GAME PLAYER -->
+                <!-- START OF SINGLE PLAYER -->
                 <section class="player player--1">
                     <!-- PLAYER NAME -->
                     <h2 class="name" id="name--1">Player 2</h2>
@@ -67,5 +68,6 @@
     </div>
     <!-- END OF MAIN PAGE CONTAINER -->
     
+
 </body>
 </html>

@@ -20,17 +20,31 @@ body {
     justify-content: center;
     align-items: center;
 }
-/* CONTAINER FOR DICE IMAGES */
-#diceContainer {
-    display: flex;
+/* .hidden {
+    display: none;
+} 
+*/
+
+/* CONTAINER */
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 10rem 8rem 1fr;
     justify-content: center;
+    align-content: center;
     align-items: center;
-    background-color: red;
+    padding: 2rem
 }
-/* DICE IMAGE */
-#diceContainer img {
+/* CONTAINER FOR DICE */
+#diceContainer {
+    height: 100%;
+    width: 10rem;
+    margin: 0 auto;
+}
+#diceContainer img{
     display: inline-block;
     width: 100%;
+    height: 100%;
 }
 /* PAGE MAIN H1*/
 #pageHeader {
@@ -38,36 +52,33 @@ body {
     text-align: center;
     font-size: 3rem;
 }
-/* CONTAINER HAS NO STYLES JUST USED TO CONTAIN CONTENT */
 
 /* GAME CONTAINER */
 .container main {
-    width: 90vw;
-    height: 60rem;
-    background-color: transparent;
+    min-width: 75vw;
     box-shadow: 0 2rem 4rem rgba(0,0,0, .3);
     border-radius: 2rem;
     overflow: hidden;
-    filter: blur();
 }
 /* BUTTON CONTAINER FOR GAME CONTAINER */
 .container #btnContainer {
     width: 75%;
-    height: 5rem;
-    display: flex;
     margin: 2rem auto;
+    display: flex;
     justify-content: space-between;
     align-items: center;
-
+}
+button {
+    background-color: transparent;
+    border: none;
 }
 /* ALL BUTTONS IN THE BUTTON CONTAINER */
 #btnContainer .btn {
-    display: inline-block;
     font-family: inherit;
     font-weight: bold;
     padding: 1.3rem 2rem;
     color: black;
-    font-size: 1.8rem;
+    font-size: 2rem;
     text-align: center;
     text-decoration: none;
     width: 80px;
@@ -76,22 +87,11 @@ body {
 /* BUTTON HOVER STATE */
 .btn:hover {
     transform: translateY(-5px);
+    cursor: pointer;
 }
 /* BUTTON ACTIVE STATE */
 .btn:active {
     scale: 1.1;
-}
-/* ROLL BUTTON */
-#btnContainer #btn--roll {    
-
-}
-/* HOLD BUTTON */
-#btnContainer #btn--hold {
-
-}
-/* NEW GAME BUTTON */
-#btnContainer #btn--new {
-
 }
 /* PLAYER CONTAINER */
 .playerContainer {
@@ -99,20 +99,19 @@ body {
     width: 100%;
     background-color: transparent;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    /* grid-template-rows: 250px 1fr;  ADD TO MEDIA QUERY*/
+    grid-template-columns: repeat(2, 1fr);
 }
 /* STYLE FOR INDIVIDUAL PLAYER */
 .player {
     text-align: center;
-    display: flex;
-    flex-direction: column;
+    padding-bottom: 3rem;
 
 }
 /* PLAYER HEADER */
 .player h2 {
-    padding: 3rem;
-    font-size: 4rem;
+    padding: 1rem;
+    font-size: 3.6rem;
+    margin-bottom: 3rem;
 }
 /* PLAYER SCORE */
 .player .score {
@@ -120,24 +119,24 @@ body {
 }
 /* PLAYER CURRENT SCORE */
 .currentScore {
-    border: 2px solid black;
-    width: 20vw;
-    margin: 0 auto;
-    margin-top: 15rem;
+    margin-top: 5rem;
     padding: 2.3rem;
-    border-radius: 15px;
 }
 /* PLAYER LABEL */
 .current-label {
+    width: 8rem;
     font-size: 1.8rem;
     font-weight: bold;
-    padding-bottom: 2rem;
+    margin: 0 auto;
+    border-bottom: 2px solid black;
 }
 /* PLAYER SCORE */
 .current-score {
     font-size: 3rem;
     font-weight: bold;
+    margin-top: 3rem;
 }
+/* CLASS FOR ACTIVE PLAYER*/
 .player--active {
     background-color: rgba(245, 245, 245, 0.152);
 }
