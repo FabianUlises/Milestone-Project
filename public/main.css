@@ -108,7 +108,9 @@ button {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 100px 1fr;
-
+}
+.player--winner {
+    background-image: url(img/confetti-40.gif);
 }
 /* PLAYER HEADER */
 .player h2 {

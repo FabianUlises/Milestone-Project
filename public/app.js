@@ -64,12 +64,10 @@ btnRoll.addEventListener(`click`, function() {
         diceCtn.classList.remove(`hidden`);
         // IF DICENUM === 1 CURRENT PLAYER LOSES AND SWITCHES
         if(diceNum !== 1) {
-            console.log(`your winning`)
             // SETTING CURRENT SCORE TO EQUAL DICENUM
             currentScore += diceNum;
             document.querySelector(`#current--${activePlayer}`).textContent = currentScore;
         } else {
-            console.log(`your losing`)
             // SWITCHING PLAYER
             switchPlayer();
         }
@@ -87,9 +85,12 @@ btnHold.addEventListener(`click`, function() {
         // GAME IS OVER
         playing = false;
         // ADD HIDDEN CLASS TO IMAGE DICE CONTAINER
-        diceCtn.classList.remove(`hidden`);
+        diceCtn.classList.add(`hidden`);
         // DISABLE HOLD BUTTON
         document.querySelector(`.btn--hold`).disabled = true;
+        // ADD WINNING CLASS 
+        document.querySelector(`.player--${activePlayer}`).classList.add(`player--winner`);
+        document.querySelector(`.player--${activePlayer}`).classList.remove(`player--active`);
     } else {
         // SWITCHING PLAYER
         switchPlayer();
