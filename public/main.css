@@ -21,30 +21,29 @@ body {
     align-items: center;
     position: relative;
 }
-.hidden {
-    display: none;
-} 
-
-
-/* CONTAINER */
-.container {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 10rem 8rem 1fr;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    padding: 2rem
-}
 
 /* Modal */
 /*modal button */
 #howTo {
-    background-color: rgba(0,0,0,.3);
+    background-color: transparent;
     width: 12rem;
     position: absolute;
     right: 0;
     top: 200px;
+    transition: all 1.2s ease;
+    outline: none;
+}
+#howTo:hover {
+    transform: none;
+    background-color: rgba(0,0,0,.3);
+}
+#closeModal {
+    color: white;
+    border: 1px solid white;
+    justify-self: end;
+}
+#closeModal:hover {
+    transform: none;
 }
 /* modal overlay */
 .over-lay {
@@ -58,8 +57,43 @@ body {
     z-index: 10;
 }
 /* modal container */
+.modal{
+    background-color: rgba(132, 54, 132, .9);
+    z-index: 20;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 75%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    display: grid;
+    grid-template-rows: 50px 1fr;
+    grid-template-columns: 1fr;
+}
+.modal h1 {
+    font-size: 4rem;
+    margin-bottom: 3rem;
+}
+.modal ol{
+    font-size: 1.8rem;
+    list-style-type: none;
+}
+.modal ol li {
+    margin-bottom: 20px;
+}
 
 
+
+/* CONTAINER */
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 10rem 8rem 1fr;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    padding: 2rem
+}
 
 /* CONTAINER FOR DICE */
 #diceContainer {
@@ -171,3 +205,7 @@ button {
 .player--active {
     background-color: rgba(245, 245, 245, 0.152);
 }
+.hidden {
+    display: none;
+} 
+

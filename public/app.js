@@ -5,6 +5,8 @@ const score0 = document.querySelector(`#score--0`);
 const score1 = document.querySelector(`#score--1`);
 const currentScore0 = document.querySelector(`#current--0`);
 const currentScore1 = document.querySelector(`#current--1`);
+const modal = document.querySelector(`.modal`);
+const overlay = document.querySelector(`.over-lay`);
 
 // SETTING VARIABLES FOR DICE AND BUTTONS
 const dice = document.querySelector(`.dice`);
@@ -12,7 +14,27 @@ const btnNew = document.querySelector(`.btn--new`);
 const btnHold = document.querySelector(`.btn--hold`);
 const btnRoll = document.querySelector(`.btn--roll`);
 const diceCtn = document.querySelector(`#imgCtn`);
+const btnmodal = document.querySelector(`#howTo`);
+const closeModalBtn = document.querySelector(`#closeModal`);
 
+// CLOSE MODAL FUNCTION
+const closeModal = function() {
+    overlay.classList.add(`hidden`);
+    modal.classList.add(`hidden`);
+}
+// HOW TO PLAY MODAL
+btnmodal.addEventListener(`click`, () => {
+    overlay.classList.remove(`hidden`);
+    modal.classList.remove(`hidden`);
+})
+
+// CLOSE MODAL BUTTONS
+closeModalBtn.addEventListener(`click`, closeModal)
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+    closeModal();
+  }
+});
 // INITIALIZING 
 let score, currentScore, activePlayer, playing, player1Name, player2Name;
 // FUNCTION FOR PLAYER NAME
@@ -75,7 +97,7 @@ btnRoll.addEventListener(`click`, function() {
     }
 });
 // HOLD BUTTON
-// if playering when button is pressed current score should be added to score Array
+// if playing when button is pressed current score should be added to score Array
 // set the score from array to equal score on Ui
 // if score > 100 game is won
 btnHold.addEventListener(`click`, function() {
