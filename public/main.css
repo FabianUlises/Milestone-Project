@@ -19,6 +19,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 .hidden {
     display: none;
@@ -35,6 +36,31 @@ body {
     align-items: center;
     padding: 2rem
 }
+
+/* Modal */
+/*modal button */
+#howTo {
+    background-color: rgba(0,0,0,.3);
+    width: 12rem;
+    position: absolute;
+    right: 0;
+    top: 200px;
+}
+/* modal overlay */
+.over-lay {
+    background-color: red;
+    position: absolute;
+    left: 0
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 10;
+}
+/* modal container */
+
+
+
 /* CONTAINER FOR DICE */
 #diceContainer {
     height: 100%;
@@ -73,7 +99,7 @@ button {
     border: none;
 }
 /* ALL BUTTONS IN THE BUTTON CONTAINER */
-#btnContainer .btn {
+.btn {
     font-family: inherit;
     font-weight: bold;
     padding: 1.3rem 2rem;
