@@ -1,0 +1,229 @@
+/* Variables */
+$gradient-color-1: rgba(147, 116, 59, .8) 0%;
+$gradient-color-2: rgba(132, 54, 132, .9) 100%;
+$font-color: whitesmoke;
+$overlay-bg: red;
+$modal-bg: rgba(132, 54, 132, .9);
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+/* HTML */
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+/* BODY DEFAULT STYLES */
+body {
+    font-family: 'Courier New', Courier, monospace;
+    min-height: 100vh;
+    width: 100%;
+    color: $font-color;
+    background-image: linear-gradient(to top left, $gradient-color-1, $gradient-color-2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Modal */
+/*modal button */
+#howTo {
+    background-color: transparent;
+    width: 12rem;
+    position: absolute;
+    right: 0;
+    top: 200px;
+    transition: all 1.2s ease;
+    outline: none;
+    &:hover {
+        transform: none;
+        background-color: rgba(0,0,0,.3);
+    }
+}
+
+#closeModal {
+    color: $font-color;
+    border: 1px solid $font-color;
+    justify-self: end;
+    :hover {
+        transform: none;
+    }
+}
+
+/* modal overlay */
+.over-lay {
+    background-color: $overlay-bg;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 10;
+}
+/* modal container */
+.modal {
+    background-color: $modal-bg;
+    z-index: 20;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 75%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    display: grid;
+    grid-template-rows: 50px 1fr;
+    grid-template-columns: 1fr;
+
+    h1 {
+        font-size: 4rem;
+        margin-bottom: 3rem;
+    }
+
+    ol {
+        font-size: 1.8rem;
+        list-style-type: none;
+
+        li {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+
+
+
+
+/* CONTAINER */
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 10rem 8rem 1fr;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    padding: 2rem
+
+    /* GAME CONTAINER */
+    main {
+        min-width: 75vw;
+        box-shadow: 0 2rem 4rem rgba(0,0,0, .3);
+        border-radius: 2rem;
+        overflow: hidden;
+    }
+    /* BUTTON CONTAINER FOR GAME CONTAINER */
+    #btnContainer {
+        width: 75%;
+        margin: 2rem auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+/* CONTAINER FOR DICE */
+#diceContainer {
+    height: 100%;
+    width: 10rem;
+    margin: 0 auto;
+
+    img {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/* PAGE MAIN H1*/
+#pageHeader {
+    padding: 2rem;
+    text-align: center;
+    font-size: 3.6rem;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+}
+/* ALL BUTTONS IN THE BUTTON CONTAINER */
+.btn {
+    font-family: inherit;
+    font-weight: bold;
+    padding: 1.3rem 2rem;
+    color: black;
+    font-size: 2rem;
+    text-align: center;
+    text-decoration: none;
+    width: 80px;
+    transition: transform 250ms ease;
+    &:hover {
+        transform: translateY(-5px);
+        cursor: pointer;
+    }
+    /* BUTTON ACTIVE STATE */
+    &:active {
+        scale: 1.1;
+    }
+}
+/* PLAYER CONTAINER */
+.playerContainer {
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+/* STYLE FOR INDIVIDUAL PLAYER */
+.player {
+    text-align: center;
+    padding-bottom: 3rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 100px 1fr;
+
+    /* PLAYER HEADER */
+    h2 {
+        padding: 1rem;
+        font-size: 3.6rem;
+        margin-bottom: 3rem;
+    }
+    /* PLAYER SCORE */
+    .score {
+        font-size: 6rem;
+    }
+}
+.player--winner {
+    background-image: url(img/confetti-40.gif);
+}
+
+
+/* PLAYER CURRENT SCORE */
+.currentScore {
+    margin-top: 5rem;
+    padding: 2.3rem;
+}
+/* PLAYER LABEL */
+.current-label {
+    width: 8rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0 auto;
+    border-bottom: 2px solid black;
+}
+/* PLAYER SCORE */
+.current-score {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-top: 3rem;
+}
+/* CLASS FOR ACTIVE PLAYER*/
+.player--active {
+    background-color: rgba(245, 245, 245, 0.152);
+}
+.hidden {
+    display: none;
+} 
+

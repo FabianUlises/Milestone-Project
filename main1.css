@@ -1,3 +1,9 @@
+/* Variables */
+$gradient-color-1: rgba(147, 116, 59, .8) 0%;
+$gradient-color-1: rgba(132, 54, 132, .9) 100%;
+$font-color: whitesmoke;
+$overlay-bg: red;
+$modal-bg: rgba(132, 54, 132, .9);
 /* RESET */
 * {
     margin: 0;
@@ -14,8 +20,8 @@ body {
     font-family: 'Courier New', Courier, monospace;
     min-height: 100vh;
     width: 100%;
-    color: whitesmoke;
-    background-image: linear-gradient(to top left, rgba(147, 116, 59, .8) 0%, rgba(132, 54, 132, .9) 100%);
+    color: $font-color;
+    background-image: linear-gradient(to top left, $gradient-color-1, $gradient-color-2);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,8 +44,8 @@ body {
     background-color: rgba(0,0,0,.3);
 }
 #closeModal {
-    color: white;
-    border: 1px solid white;
+    color: $font-color;
+    border: 1px solid $font-color;
     justify-self: end;
 }
 #closeModal:hover {
@@ -47,9 +53,9 @@ body {
 }
 /* modal overlay */
 .over-lay {
-    background-color: red;
+    background-color: $overlay-bg;
     position: absolute;
-    left: 0
+    left: 0;
     top: 0;
     width: 100%;
     height: 100%;
@@ -58,7 +64,7 @@ body {
 }
 /* modal container */
 .modal{
-    background-color: rgba(132, 54, 132, .9);
+    background-color: $modal-bg;
     z-index: 20;
     position: absolute;
     top: 50%;
