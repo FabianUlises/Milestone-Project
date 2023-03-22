@@ -103,7 +103,7 @@ btnRoll.addEventListener(`click`, function() {
 btnHold.addEventListener(`click`, function() {
     score[activePlayer] += currentScore;
     document.getElementById(`score--${activePlayer}`).textContent = score[activePlayer];
-    if(score[activePlayer] >= 100) {
+    if(score[activePlayer] >= 25) {
         // GAME IS OVER
         playing = false;
         // ADD HIDDEN CLASS TO IMAGE DICE CONTAINER

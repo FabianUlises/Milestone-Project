@@ -24,8 +24,9 @@ body {
   align-items: center;
   position: relative;
 }
+
 .player--winner {
-  background-image: url('./../img/confetti-40.gif');
+  background-image: url(./img/confetti-40.gif);
 }
 
 /* Modal */
@@ -220,6 +221,4 @@ button {
 
 .hidden {
   display: none;
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */

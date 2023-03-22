@@ -1,9 +1,11 @@
 /* Variables */
-$gradient-color-1: rgba(147, 116, 59, .8) 0%;
-$gradient-color-1: rgba(132, 54, 132, .9) 100%;
-$font-color: whitesmoke;
-$overlay-bg: red;
-$modal-bg: rgba(132, 54, 132, .9);
+:root {
+    --gradient-color-1: rgba(147, 116, 59, .8);
+    --gradient-color-2: rgba(132, 54, 132, .9);
+    --font-color: whitesmoke;
+    --overlay-bg: red;
+    --modal-bg: rgba(132, 54, 132, .9);
+}
 /* RESET */
 * {
     margin: 0;
@@ -20,8 +22,8 @@ body {
     font-family: 'Courier New', Courier, monospace;
     min-height: 100vh;
     width: 100%;
-    color: $font-color;
-    background-image: linear-gradient(to top left, $gradient-color-1, $gradient-color-2);
+    color: var(--font-color);
+    background-image: linear-gradient(to top left, var(--gradient-color-1), var(--gradient-color-2));
     display: flex;
     justify-content: center;
     align-items: center;
@@ -44,8 +46,8 @@ body {
     background-color: rgba(0,0,0,.3);
 }
 #closeModal {
-    color: $font-color;
-    border: 1px solid $font-color;
+    color: var(--font-color);
+    border: 1px solid var(--font-color);
     justify-self: end;
 }
 #closeModal:hover {
@@ -53,7 +55,7 @@ body {
 }
 /* modal overlay */
 .over-lay {
-    background-color: $overlay-bg;
+    background-color: var(--overlay-bg);
     position: absolute;
     left: 0;
     top: 0;
@@ -64,7 +66,7 @@ body {
 }
 /* modal container */
 .modal{
-    background-color: $modal-bg;
+    background-color: var(--modal-bg);
     z-index: 20;
     position: absolute;
     top: 50%;
@@ -176,8 +178,9 @@ button {
     grid-template-rows: 1fr 100px 1fr;
 }
 .player--winner {
-    background-image: url(img/confetti-40.gif);
+    background-image: url(./img/confetti-40.gif);
 }
+
 /* PLAYER HEADER */
 .player h2 {
     padding: 1rem;
